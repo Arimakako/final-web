@@ -47,6 +47,7 @@ ngOnDestroy(): void {
   ngOnInit():void{
     this.getProducts();
     this.readQueryParams();
+    this.applyFilters();
   this.getFilteredProducts();
 
   // Example of debouncing the addToCart event using RxJS

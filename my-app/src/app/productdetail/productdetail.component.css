@@ -1,9 +1,6 @@
 /* Product Container */
 .btn-color{
   background: #FFCC70;
-  position: relative;
-
-
 }
 .product-container {
   width: 100%;
@@ -68,8 +65,7 @@
 .actual-price {
   justify-content: flex-start;
   align-items: flex-start;
-  left: 50px;
-  gap: 15px;
+  gap: 6px;
   display: inline-flex;
 }
 
@@ -83,25 +79,119 @@
   word-wrap: break-word;
 }
 
+/* Size Selection */
+.size-selection {
+  flex-direction: column; /* Adjusted to make options appear horizontally */
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  display: flex;
+  margin-top: 20px;
+}
 
+/* Size Options */
+.size-options {
+  width: 432px;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: inline-flex;
+}
 
-/* Add to Bag Text */
-.add-to-bag {
+/* Size Label */
+.size-label {
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  display: flex;
+}
+
+/* Size Value */
+.size-value {
+  color: #1E1E1E;
+  font-size: 12px;
+  word-wrap: break-word;
+}
+
+/* Size Guide Link */
+.size-guide-link {
+  color: #1E1E1E;
+  font-size: 12px;
+  text-decoration: underline;
+  word-wrap: break-word;
+}
+
+/* Size Option Container */
+.size-option-container {
+  width: 133px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 8px;
+  border: 1px #686363 solid;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-block; /* Set to inline-block to make them appear horizontally */
+  margin-right: 10px;
+}
+
+/* Size Info Container */
+.size-info-container {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4px;
+  display: flex;
+}
+
+/* Size Dimension */
+.size-dimension {
+  color: #1E1E1E;
+  font-size: 20px;
+  word-wrap: break-word;
+}
+
+/* Size Type */
+.size-type {
+  color: #686363;
+  font-size: 12px;
+  word-wrap: break-word;
+}
+
+/* Add to Bag Container */
+.add-to-bag-container {
   margin-top: 20px;
   width: 193px;
   height: 44px;
+  position: relative;
   gap: 20px;
+}
+
+/* Add to Bag Background */
+.add-to-bag-background {
+  width: 193px;
+  height: 44px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
   background: #FFCC70;
   border-radius: 200px;
+}
+
+/* Add to Bag Text */
+.add-to-bag-text {
+  width: 97.79px;
+  height: 15.27px;
+  left: 48.04px;
+  top: 14.37px;
+  position: absolute;
   text-align: center;
   color: #0c0c0c;
   font-size: 15px;
   font-family: Nunito;
   font-weight: 400;
   word-wrap: break-word;
-}
-.add-to-bag:hover {
-  background: #FCA41D; /* Change the background color on hover */
 }
 
 
@@ -110,12 +200,14 @@
 .description-container {
   width: 641px;
   height: 592px;
-  display: flex;
+  left: 700px;
+  top: 247px;
+  position: absolute;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-left: auto; /* Đặt margin-left: auto để container nằm bên phải */
   gap: 32px;
+  display: inline-flex;
 }
 
 .section-heading {
@@ -157,5 +249,4 @@
   font-weight: 400;
   line-height: 30px;
   word-wrap: break-word;
-  text-align: justify;
 }

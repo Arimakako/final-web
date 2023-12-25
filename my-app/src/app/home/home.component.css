@@ -4,6 +4,7 @@
 
 .homeintro p {
     position: absolute;
+    text-align: center;
     top: 400px;
     left: 120px;
     font-family:  'Nunito', Times;
@@ -48,29 +49,43 @@
     object-fit: cover;
 }
 
-.bodycontent p1 {
+.bodycontent-p1-left {
     position: absolute;
-    top: 156%;
-    text-align: left;
+    top: 180%;
+    left: 2%;
     color: black;
+    text-align: center;
 }
 
-.bodycontent p2 {
+.bodycontent-p1-right {
     position: absolute;
-    top: 25%;
-    text-align: left;
+    top: 180%;
+    right: 10%;
+    color: black;
+    text-align: center;
+}
+
+.bodycontent-p2 {
+    position: absolute;
+    top: 250%;
+    left: 2%;
+    text-align: center;
     color: black;
     font-size: 20px;
 }
   
-.bodycontent p3 {
+.bodycontent-p3 {
     position: absolute;
-    top: 318%;
-    text-align: left;
+    top: 340%;
+    right: 25%;
+    text-align: center;
     color: black;
     font-size: 30px;
 }
 
 .bodycontent h1, h2, h3 {
 text-align: center;
+}
+.center {
+    text-align: center;
 }

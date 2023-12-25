@@ -3,8 +3,14 @@
     <button class="btn-color" (click)="goBack()">Back</button>
 </div>
 <div class ="container">
-<h3 class ="text-center"> {{blog.title}}</h3>
+<h3 class ="text-center text-color"> {{blog.title}}</h3>
 </div>
-<div>
-    {{blog.content}}
+<table>
+    <tr>
+        <td> {{blog.content}} </td>
+        <td> <img src ="https://t4.ftcdn.net/jpg/06/10/13/27/360_F_610132710_9M0fM6ggD6Z38yfNdPWQ9w3j6uCOZ54y.jpg"> </td>
+    </tr>
+</table>
+<div class ="text-center">
+    Topic: {{blog.tag1}}, {{blog.tag2}}, {{blog.tag3}}
 </div>

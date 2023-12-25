@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div class ="row">
-                <div class ="col-lg-3" *ngFor="let blog of this.blogs">
+                <div class ="col-lg-3 mb-3 d-flex align-items-stretch" *ngFor="let blog of this.blogs">
                     <div class ="card">
                         <img src ="{{blog.img}}" class ="card-img-top" (click)="detailBlog(blog._id)">
                         <div class ="card-body">
