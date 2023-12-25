@@ -1,41 +1,70 @@
+<!-- ============== SECTION PAGETOP ============== -->
+  <div class="container">
+    <ol class="breadcrumb ondark mb-0">
+    <li class="breadcrumb-item"><a href="">Home</a></li>
+    <li class="breadcrumb-item"><a href="product">Product</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Product Catalog</li>
+    </ol>
+    <div class="filter-container collapse card d-lg-block mb-5">
+
+      <article class="filter-group">
+        <header class="card-header">
+          <a class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside_cate" role="button" aria-expanded="false">
+          <i class="icon-control fa fa-chevron-down"></i>  Category 
+          </a>
+        </header>
+        <div class="collapse" id="collapse_aside_cate">
+          <div class="card-body">
+            <div *ngFor="let cate of productcateunique">
+              <input type="checkbox" [(ngModel)]="selectedCates" [value]="cate" (ngModelChange)="applyFilters()">
+              <span class="form-check-label"> {{cate}} </span>
+            </div>
+        </div> <!-- card-body .// -->
+    </div> <!-- collapse.// -->
+    </article>
+    
+      <article class="filter-group">
+        <header class="card-header">
+          <a class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside_price" role="button" aria-expanded="false">
+          <i class="icon-control fa fa-chevron-down"></i>  Pet type 
+          </a>
+        </header>
+        <div class="collapse" id="collapse_aside_price">
+          <div class="card-body">
+            <div>
+              <span class="form-check-label" *ngFor="let s of pettypeunique"> {{s}} </span>
+              <input type="checkbox" [(ngModel)]="selectedPetTypes" [value]="" (ngModelChange)="applyFilters()">
+            </div>
+        </div> <!-- card-body .// -->
+    </div> <!-- collapse.// -->
+    </article>
+    <article class="filter-group">
+        <header class="card-header">
+          <a class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside_type" role ="button">
+          <i class="icon-control fa fa-chevron-down"></i>  Price
+          </a>
+        </header>
+        <div class="collapse" id="collapse_aside_type">
+          <div class="card-body">
+            <label for="lowerPrice">From:</label>
+            <input type="number" id="lowerPrice" [(ngModel)]="lowerPrice" (ngModelChange)="applyFilters()" min="0">
+            <br>
+            <label for="upperPrice">To:</label>
+            <input type="number" id="upperPrice" [(ngModel)]="upperPrice" (ngModelChange)="applyFilters()" min="0">
+          </div>
+    </div> <!-- collapse.// -->
+    </article>
+    </div>
+    <img class="img" src="./assets/images/productcatalog_img/image 1643.png" alt="Product Image">
+  </div> <!-- container //  -->
 <!-- ============== SECTION PAGETOP END// ============== -->
 <!-- ============== SECTION CONTENT ============== -->
-
-<!-- Price Range -->
-<div class="filter-group">
-  <header class="card-header">Price Range</header>
-  <div class="card-body">
-    <label for="lowerPrice">From:</label>
-    <input type="number" id="lowerPrice" [(ngModel)]="lowerPrice" (ngModelChange)="applyFilters()" min="0">
-    <br>
-    <label for="upperPrice">To:</label>
-    <input type="number" id="upperPrice" [(ngModel)]="upperPrice" (ngModelChange)="applyFilters()" min="0">
-  </div>
-</div>
- 
-<div>
-  <h4>Categories</h4>
-  <div *ngFor="let cate of productcateunique">
-    <input type="checkbox" [(ngModel)]="selectedCates" [value]="cate" (ngModelChange)="applyFilters()">{{cate}}
-  </div>
-</div>
-
-<div>
-  <h4>Pet Types</h4>
-  <div *ngFor="let pettype of pettypeunique">
-    <input type="checkbox" [(ngModel)]="selectedPetTypes" [value]="pettype" (ngModelChange)="applyFilters()">{{pettype}}
-  </div>
-</div>
-
-<!-- Sorting Buttons -->
-<button (click)="sortPrice('asc')">Sort Price Ascending</button>
-<button (click)="sortPrice('dsc')">Sort Price Descending</button>
-
   <div class="container">
     <div class="product-section">
       <div class="product-grid">
         <div class="product-card">
-          <img src="./assets/images/productcatalog_img/image 1643.png" alt="Product Image">
+          <button (click)="sortPrice('asc')" class ="btn-color">Price Ascending</button>
+          <button (click)="sortPrice('dsc')" class ="btn-color">Price Descending</button>
           <div class="product-overlay">
             <div class="badge sale">Sale</div>
           </div>
@@ -57,11 +86,10 @@
       </div>
     </div>
     <!-- product-section .// -->
-
-    <div>
-      <pagination-controls class="pagination" previousLabel="Prev" nextLabel="Next" (pageChange)="onChange($event)">
-      </pagination-controls>
-    </div>
+  </div>
+  <div class ="center">
+    <pagination-controls class="pagination" previousLabel="Prev" nextLabel="Next" (pageChange)="onChange($event)">
+    </pagination-controls>
   </div>
 
 <!-- catalog-container .// -->
