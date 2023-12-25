@@ -71,7 +71,7 @@ getBlogsByCate(s: string) {
 
 // route to fashion detail page
 detailBlog(blogId: string) {
-  this._router.navigate(['/blogs/detail', blogId])
+  this._router.navigate(['/tips/detail', blogId])
 }
 
 onChange(e: any): void{
