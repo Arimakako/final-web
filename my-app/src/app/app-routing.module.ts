@@ -46,7 +46,7 @@ const routes: Routes = [
 {path:'check',component:CheckComponent},
 {path:'about-us',component:AboutusComponent},
 {path:'cart',component:CartComponent},
-{path:'tracking',component:OrderTrackingComponent},
+{ path: 'track-order', component: OrderTrackingComponent},
 {path:'signup',component:SignupComponent},
 {path:'profile',component:ProfileComponent},
 {path: 'tips-admin', component: BlogAdminComponent},

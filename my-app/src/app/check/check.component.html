@@ -1,122 +1,88 @@
+<!-- check.component.html -->
 <div class="container">
-  <div class="header-check">
-    <h2>Check Out</h2>
-    <button type="button" class="btn btn-link top-right-button-back">Back</button>
-  </div>
+  <form [formGroup]="orderForm" (ngSubmit)="placeOrder()" novalidate>
+
+    <!-- Shipping Address Section -->
+    <div class="address-shipping">
+      <h2>1. Shipping Address</h2>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name" placeholder="Your name" required class="form-control">
+        <div *ngIf="orderForm.controls.name.invalid && orderForm.controls.name.touched" class="error">
+          Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" formControlName="phone" placeholder="Your phone number" required class="form-control">
+        <div *ngIf="orderForm.controls.phone.invalid && orderForm.controls.phone.touched" class="error">
+          A valid phone number is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" formControlName="address" placeholder="Your address" required class="form-control"></textarea>
+        <div *ngIf="orderForm.controls.address.invalid && orderForm.controls.address.touched" class="error">
+          Address is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Review Section -->
+    <div class="order">
+      <h2>2. Review Items and Shipping</h2>
+      <table class="table table-checkout">
+        <thead>
+          <tr>
+            <th scope="col">Items</th>
+            <th scope="col">Prices</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems">
+            <td>{{ item.name }}</td>
+            <td>{{ item.price | currency:"VND"}}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ (item.price * item.quantity) | currency:"VND" }}</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="shipping-fee">Shipping Fee:</td>
+            <td>{{ calculateShipping() | currency }}</td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+
+    <!-- Payment Method Section -->
+    <div class="paySection">
+      <h2>3. Payment Method: Cash on delivery</h2>
+    </div>
+
+    <!-- Order Totals and Submission -->
+    <div class="check-out-order">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="totals">
+            <div class="totals-item">
+              <label>Subtotal ({{totalCount}} items):</label>
+              <span>{{subtotal | currency:"VND"}}</span>
+            </div>
+            <div class="totals-item">
+              <label>Grand Total:</label>
+              <span>{{subtotal + calculateShipping() | currency: "VND"}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 d-flex justify-content-center">
+          <button type="submit" class="btn btn-success" [disabled]="loading || orderPlaced">Place your order</button>
+        </div>
+      </div>
+      <div *ngIf="loading">Processing your order...</div>
+      <div *ngIf="orderPlaced && !loading">Thank you! Your order has been placed.</div>
+      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    </div>
+
+  </form>
 </div>
-
- <div class="address-shipping">
-      <strong>1. Shipping address</strong>
-      <button type="button" class="btn btn-link top-right-button">Change</button>
-      <p>Anh Khoa</p>
-      <p>(+84) 941705717</p>
-      <p> Ktx Đại Học Quốc Gia Khu B, Phường Linh Trung, Thành Phố Thủ Đức, TP. Hồ Chí MinH </p>
-    </div>
-    <main>
-      
-      <div class="order">
-          <strong>2. Review items and shipping</strong>
-          <table class="table table-checkout">
-            <thead>
-              <tr>
-                <th scope="col">Items</th>
-                <th scope="col">Prices</th>
-                <th scope="col">Qty</th>
-                <th scope="col">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="w-25">
-                  <img src="\assets\images\productdetail_img\toy9.png" class="img-fluid" alt="Sheep">
-                  Under stair Hamster house</td>
-                <td>129.000VND</td>
-               <td class="qty"><input type="text" class="form-control" id="input1" value="0"></td>
-               <td class="total-items">129000</td>
-             </tr>
-             
-             <tr>
-              <td class="shipping-fee">Shipping Fee:</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-
-              <td id="shipping-fee-total">55000</td>
-            </tr>
-             <!--them tr moi khi co san pham-->
-           </tbody>
-         </table> 
-        </div>
-        <div class="paySection">
-          <ul class="paymethods">
-            <li> <strong>3. Payment method:  </strong></li>
-            
-            <li>
-              <button type="button" class="btn" data-toggle="modal" data-target="#creditCardModal">
-                <img src="https://d1b2zzpxewkr9z.cloudfront.net/images/checkout/visa.png" alt="Visa">
-              </button>
-            </li>
-            <li>
-              <button type="button" class="btn" data-dismiss="modal" data-target="#creditCardModal">
-                <img src="https://d1b2zzpxewkr9z.cloudfront.net/images/checkout/paypal_logo.png" alt="">
-              </button>
-            </li>
-          </ul>
-        </div>
-      <div class="container check-out-order">
-        <div class="row">
-          <div class="col-sm-6 d-flex justify-content-center">
-            <button type="button" class="btn btn-success">Place your order</button>
-          </div>
-          <div class="col-sm-6">
-            <div class="totals">
-              <div class="totals-item d-flex justify-content-between">
-                <label>Subtotal(x items)</label>
-                <div class="totals-value" id="cart-subtotal">0</div>
-              </div>
-              <div class="totals-item d-flex justify-content-between">
-                <label>Shipping fee</label>
-                <div class="totals-value" id="cart-shipping">0</div>
-              </div>
-              <div class="totals-item totals-item-total d-flex justify-content-between">
-                <label>Grand Total</label>
-                <div class="totals-value" id="cart-total">0</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </main>
-  <div class="modal fade creditcard" id="creditCardModal" tabindex="-1" role="dialog" aria-labelledby="creditCardModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="creditCardModalLabel">Credit Card Payment</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form >
-            <div class="form-group row">
-              <label for="cardNumber">Card Number</label> <input type="text" class="form-control card" id="cardNumber" placeholder="Enter card number" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
-          </div>
-            <div class="form-group row">
-              <label for="expirationDate">Expiration Date</label>
-              <input type="date" class="form-control" id="expirationDate" placeholder="Enter expiration date">
-            </div>
-            <div class="form-group row">
-              <label for="cvv">CVV</label>
-              <input type="text" class="form-control card" id="cvv" placeholder="Enter CVV" oninput="this.value = this.value.replace(/[^0-9]/g, '')"  >
-            </div>
-            <div class="form-group row">
-              <label for="nameOnCard">Name on Card</label>
-              <input type="text" class="form-control card" id="nameOnCard" placeholder="Enter name on card">
-            </div>
-            <div class="form-group">
-              <button type="button" class="btn btn-primary">Pay now</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>

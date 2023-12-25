@@ -102,7 +102,7 @@ ngOnDestroy(): void {
     this.getFilteredProducts();
   }
 
-  sortPrice(order: 'asc' | 'dsc') {
+  sortPrice(order: 'asc' | 'desc') {
     console.log(`Sorting price in order: ${order}`);
     const selectedCatesString = this.selectedCates.join('');
     const selectedPetTypesString = this.selectedPetTypes.join('');
