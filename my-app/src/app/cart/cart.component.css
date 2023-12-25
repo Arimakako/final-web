@@ -1,0 +1,119 @@
+:root{
+    --primary:#EEECE0;
+    --secondary:#F5F5F5;
+    --text:#311C1C;
+    --blue-text:#22668D;
+    --red-text:#FF7970;
+    --yellow-btn:#FFCC70;
+  
+  }
+  html, body{
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 15px;
+  }
+  strong{
+    color:#FF7970   ;
+  }
+  .order{
+    background-color: white;
+    width: 100%;
+    max-width: 1348px;
+    padding: 20px;
+    border-radius: 50px;
+    margin: auto; 
+  
+  }
+
+  .img-fluid{
+    width: 30%;
+    height: 30%;
+    border-radius: 10px;
+  }    
+  .table-checkout thead
+    {
+        background: rgba(238, 236, 224, 0.47); 
+        border-radius: 30px;
+
+    }
+    .table-checkout thead td, .table-checkout thead th {
+      border: 0;
+      color: #311C1C;
+      font-size: 0.8rem;
+      
+    }
+    .table-checkout td, .table-checkout th {
+      vertical-align: middle;
+      text-align: center;
+    }
+    .table-checkout tbody tr{
+        background: rgba(238, 236, 224, 0.47); 
+        border-radius: 50px
+    }
+    .table-checkout td.qty, .table-checkout th.qty {
+      max-width: 2rem;
+    }
+    .totals .totals-item{
+        width: 100%;
+        margin-bottom: 10px;
+        padding-left: 10px
+      }
+      .totals .totals-item label{
+        width: 79%;
+        text-align: left;
+      }
+      .totals-value{
+        width: 21%;
+        text-align: right;
+        padding-left: 250px;
+        }
+      .price {
+      margin-left: 1rem;
+      }
+    .btn-success{
+        display: inline-block; 
+        padding: 10px 20px; 
+        border-radius: 60px;
+        background: #FFCC70;
+        color: #000;
+        font-family: Nunito;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        text-align: center; 
+      }
+
+
+
+h2{
+  font-family: Nunito;
+  font-style: normal;
+  color: #FF7970 ;
+  padding-left: 50px
+}
+  .header-check{
+    position: relative;
+    max-width: 100%;
+  }
+  .header-check h2{
+    font-size: 70px;
+    font-family: "Nunito";
+    font-weight: 900;
+    color: rgba(255, 121, 112, 1);
+    width: 644px;
+    height: 84px;
+}
+.top-right-button-back {
+position: absolute;
+top: 0;
+right: 0;
+font-size: 35px;
+font-family: "Nunito";
+font-weight: 400;
+color: rgba(0, 0, 0, 1);
+
+}

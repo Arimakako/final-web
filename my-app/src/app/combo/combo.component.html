@@ -1,0 +1,80 @@
+<div>
+    <span>
+<a style ="color: #6f6060;" href ="" >Shop</a>
+<a style ="color: #6f6060;" href ="Plans.html" >/Plans</a>
+    </span>
+</div>
+<h1 style="color: #ffcc70;">Petopia Offer</h1>
+<hr color="#e8e8e8" size="3px" style="width: 20%; float: left;">
+<br>
+<table class="tbl">
+    <tr *ngFor="let combo of combos">
+        <td style="background-color: #EEECE0; border-radius: 15px; width: 14%;">
+            <div style="text-align: center; padding-top: 15px;">
+                <h3>{{combo.price}}</h3>
+                <img src="{{combo.img}}">
+                <h4>{{combo.name}}</h4>
+            </div>
+            <br>
+            <button>Add to cart</button>
+        </td>
+        <td style="width: 1%;"></td>
+        <td style="width: 35%;">
+                Detail:<br>{{combo.des}}
+        </td>
+        <!-- <td style="background-color: #EEECE0; border-radius: 15px; width: 14%;">
+            <div style="text-align: center; padding-top: 5px;">
+                <h3>{{combo.price}}</h3>
+                <img src="{{combo.img}}">
+                <h4>{{combo.name}}</h4>
+            </div>
+            <br>
+            <button> Add to cart </button>
+        </td>
+        <td style="width: 1%;"></td>
+        <td style="width: 35%;">
+                Detail:
+                <ul>
+                    <li>{{combo.des1}}</li>
+                    <li>{{combo.des2}}</li>
+                    <li>{{combo.des3}}</li>
+                    <li>{{combo.des4}}</li>
+                    <li>{{combo.des5}}</li>
+                </ul>
+        </td> -->
+    </tr>
+</table>
+<br>
+<table style="width: 100%;border-collapse: collapse; table-layout: fixed;">
+    <tr>
+        <td style="width: 40%;">&nbsp;</td>
+        <td style="width: 60%;"><img src="assets\images\combo_img\img1.png"></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td style="background-color: #8ECDDD; border-bottom-left-radius: 15px; border-top-left-radius: 15px;">
+            <p style="color: red; padding-left: 15px; padding-top: 15px;">How to register:</p>
+                <ul>
+                    <li>You can register for the service package directly at our store or through the “Add to cart” button</li>
+                    <li>When registering, you need to provide personal information and information about your pets</li>
+                </ul>
+        </td>
+    </tr>
+</table>
+<table style="width: 100%;border-collapse: collapse; table-layout: fixed;">
+    <tr>
+        <td style="width: 50%;"><img src="assets\images\combo_img\img2.png" style="float: right; padding-bottom: 0px;"></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #8ECDDD; border-bottom-right-radius: 15px; border-top-right-radius: 15px;">
+            <p style="color: red; padding-left: 15px; padding-top: 15px;">Terms and conditions:</p>
+                <ul>
+                    <li>The service package is valid for 3, 6, or 12 months from the date of registration</li>
+                    <li>The service package cannot be redeemed for cash</li>
+                    <li>The service package only applies to products and services available at the store</li>
+                </ul>
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+</table>

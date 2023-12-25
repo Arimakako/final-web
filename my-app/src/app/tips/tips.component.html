@@ -1,0 +1,42 @@
+
+    <section class ="featured-section">
+        <div class ="container-fluid">
+            <div class ="row">
+                <div class ="col-md-12 text-center mt-5">
+                    <h2 class ="text-color"> All Petopia Posts</h2>
+                </div>
+            </div>
+            <div class ="row">
+                <div class ="col-lg-3" *ngFor="let blog of this.blogs">
+                    <div class ="card">
+                        <img src ="{{blog.img}}" class ="card-img-top" (click)="detailBlog(blog._id)">
+                        <div class ="card-body">
+                            <small class ="bg-light text-danger text-center">
+                                {{blog.tag1}}
+                            </small>
+                            <small class ="bg-light text-primary text-center">
+                                {{blog.tag2}}
+                            </small>
+                            <small class ="bg-light text-success text-center">
+                                {{blog.tag3}}
+                            </small>
+                            <h5 class ="mt-1 text-center">
+                                {{blog.title}}
+                            </h5>
+                            <p class ="text-center"> {{blog.des}} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div>
+        <pagination-controls 
+        class ="pagination"
+        previousLabel = "Prev"
+        nextLabel ="Next"
+        (pageChange)="onChange($event)"
+        >
+        
+        </pagination-controls>
+    </div>

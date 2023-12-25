@@ -1,0 +1,36 @@
+
+<div class=" p-2">
+    <button class="bg-color text-white" (click)="createCombo()">Create New</button>
+  </div>
+  
+  {{errMessage}}
+  
+  <div class=" w-100">
+    <table class="table table-hover" border="1">
+      <tr class="bg-warning text-black text-center">
+        <td>Combo Id</td>
+        <td>Combo Name</td>
+        <td>Price</td>
+        <td>Description</td>
+        <td>Combo image</td>
+        <td>Action</td>
+      </tr>
+      <tbody>
+        <tr *ngFor="let combo of combos">
+          <td>{{combo._id}}</td>
+          <td>{{combo.name}}</td>
+          <td>{{combo.price}}</td>
+          <td>{{combo.des}}</td>
+          <td>
+            <img src="{{combo.img}}" width="150px" height="150px">
+          </td>
+          <td>
+            <button class="btn btn-secondary w-100 m-1" (click)="updateCombo(combo._id)">Edit</button>
+            <button class="btn btn-danger w-100 m-1" (click)="deleteCombo(combo._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  

@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+.bg-color{
+    background: #22668D;
+}
+.text-color{
+    color: #FFCC70;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.pagination {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+  }
+  
+  .pagination a.active {
+    background-color: #22668D;
+    color: white;
+  }
+h1{
+    text-align: center;
+    font-size: 36pt;
+}
+h2 {
+    text-align: center;
+    font-size: 30pt;
+}
+h3 {
+    font-size: 20pt;
+}
+.paragraph {
+    font-family: Nunito, serif;
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 10px;
+    text-indent: 1.5em;
+}
+.menu-bar {
+    background-color: #8ECDDD;
+    color: black;
+    padding: 10px;
+    display: flex;
+    justify-content:space-between ;
+   /* border: 0.1cm solid black; /* Thêm border cho thanh menu */
+}
+.menu-item {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px; /* Khoảng cách giữa các mục menu */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển động */
+    cursor: pointer;
+}
+.menu-item:hover {
+    background-color: #3195d8; /* Thay đổi màu nền khi di chuột vào */
+}
+.menu-item a {
+    color: black; /* Màu chữ đen */
+    font-size: 20px; /* Kích thước font 20px */
+    /*font-weight: bold; /* In đậm */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    transition: border-bottom 0.3s; /* Hiệu ứng chuyển động */
+    margin-right: 10px; /* Khoảng cách giữa các mục menu */
+}
+.menu-item a:hover {
+    border-bottom: 2px solid black; /* Thêm gạch chân khi di chuột vào */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+table {
+width: 100%;
+table-layout: fixed;
+}
+td {
+width: 50%;
+vertical-align: top;
+}
+img {
+max-width: 100%;
+height: auto;
+}
+table {
+  padding-left: 2cm;
+  padding-top: 1,5cm;
+  padding-right: 1cm
+}
+.divider {
+height: 2px; /* Độ dày của đường gạch */
+background-color: black; /* Màu sắc của đường gạch */
+margin-top: 10px; /* Khoảng cách từ phần tử trên */
+margin-bottom: 20px; /* Khoảng cách từ phần tử dưới */
+width: 50%; /* Độ dài của đường gạch (có thể điều chỉnh) */
+margin-left: auto;
+margin-right: auto;
+}
+/* định dạng cho phần bài viết nổi bật*/
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.custom-link {
+color: black;
+text-decoration: none;
+font-weight: normal;
+}
+
+.custom-link:hover {
+color: purple;
+font-weight: bold;
+}

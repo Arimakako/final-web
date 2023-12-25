@@ -1,0 +1,305 @@
+
+.rectangle1 {
+    position: relative;
+    width: 5cm;
+    height: 7.5cm;
+    background-color: #22668D;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rectangle1::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateX(0%) rotate(90deg) scaleY(-1);
+    width: 0;
+    height: 0;
+    border-left: 0.5cm solid transparent;
+    border-right: 0.5cm solid transparent;
+    border-bottom: 1cm solid #fff;
+  }
+  .rectangle01 {
+    position: relative;
+    width: 5cm;
+    height: 7.5cm;
+    background-color: #22668D;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rectangle01::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateX(0%) rotate(90deg) scaleY(1);
+    width: 0;
+    height: 0;
+    border-left: 0.5cm solid transparent;
+    border-right: 0.5cm solid transparent;
+    border-bottom: 1cm solid #fff;
+  }
+  .rectangle img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+  .rectangle p {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .divider {
+    height: 2px; /* Độ dày của đường gạch */
+    background-color: white; /* Màu sắc của đường gạch */
+    margin-top: 2px; /* Khoảng cách từ phần tử trên */
+    width: 70%; /* Độ dài của đường gạch (có thể điều chỉnh) */
+    margin-right: 0;
+          }
+  .custom-image1 {
+    max-width: 60%;
+    height: auto;
+  }
+  
+  .custom-image2 {
+    max-width: 60%;
+    height: auto;
+    display: flex;
+    margin-bottom: 1cm;
+  }
+  .arrow1 {
+    max-width: 40px;
+    transform: scaleX(-1);
+    height: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 1cm;
+  }
+  .arrow2 {
+    max-width: 40px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 1cm;
+  }
+  .rectangle2 {
+    position: relative;
+    width: 5cm; 
+    height: 6.7cm;
+    background-color: #EEECE0;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .rectangle2b {
+    content: 'See more';
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: #F2DBDB;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    width: 3.8cm;
+    height: 0.5cm;
+    background-color: #22668D;
+    border-radius: 50px;
+    padding: 10px;
+    display: flex;
+    bottom: 10px;
+    position: absolute;
+    bottom: 10px;
+    
+  }
+  /*
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15cm;
+    height: 7cm;
+    background-color: #22668D;
+    border-radius: 10px;
+    display: none;
+    z-index: 9999;}
+    /*border: 20px #FFFADD;*/ 
+  .rectangle-black {
+    width: 17cm;
+    height: 9cm;
+    background-color: black;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 9997;
+  }
+  .rectangle-beige {
+    width: 16cm;
+    height: 8cm;
+    background-color: beige;
+    border-radius: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    position: absolute;
+  }
+  .rectangle-beige1 {
+    width: 4cm;
+    height: 6cm;
+    left: 1cm; /* Thay đổi left thành 1cm để cách lề trái 1cm */
+    top: 50%;
+    background-color: #F3F3F3; /* Đảm bảo mã màu được đặt trong cặp dấu # */
+    border-radius: 11px;
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    z-index: 9998;
+  }
+  .rectangle-beige2 {
+    width: 5cm;
+    height: 9cm;
+    right:  1cm; /* Thay đổi left thành 1cm để cách lề trái 1cm */
+    top: 50%;
+    background-color: #F3F3F3; /* Đảm bảo mã màu được đặt trong cặp dấu # */
+    border-radius: 11px;
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    z-index: 9998;
+  }
+  .popup-blue {
+    width: 15cm;
+    height: 7cm;
+    background-color: #22668D;
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    position: absolute;
+  }
+  .rectangle-black,
+  .rectangle-beige,
+  .popup-blue {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .popup-content {
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    width: 1cm;
+    height: 1cm;
+    background-color: #FF0000;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 5px;
+    background-image: url('/assets/images/services_img/h11.png');
+    background-size: cover;
+    z-index: 9999;
+  }
+  /* Ẩn popup ban đầu */
+  .popup-blue {
+    display: none;
+  }
+  
+  /* Hiển thị popup khi cần */
+  .popup-open {
+    display: block;
+  }
+  
+  /* Ẩn nút tắt khi popup không được hiển thị */
+  #closeButton {
+    display: none;
+  }
+  
+  
+  
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: top; /* Thêm thuộc tính object-position */
+  }
+  img {
+  max-width: 100%;
+  height: auto;
+  }
+  .table1 {
+  padding-top: 1,5cm;
+  border-spacing: 1.2cm;
+  }
+  
+  .sv1{
+    bottom: 1.6cm;
+    position: absolute;
+    color: #22668D;
+    font-weight: bold;
+    text-align: center;
+    font-size: 26px;
+    }
+  .price{
+    position: relative;
+    color: #22668D;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 25px;
+    justify-content: center;
+    top: 0.2cm;
+    }
+    h3{
+      text-align: center;
+      font-size: 28px;
+      justify-content: center;
+      }
+  
+      .table2 {
+        padding: 0;
+        border-top: 1cm;
+        border-bottom: 1cm;
+        border-color: black;
+      }
+  
+      .divider2 {
+        height: 1px; /* Độ dày của đường gạch */
+        background-color: black; /* Màu sắc của đường gạch */
+        width: 100%; /* Độ dài của đường gạch (có thể điều chỉnh) */
+        margin-right: 0;
+              }  

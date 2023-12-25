@@ -1,0 +1,48 @@
+<h3 class="text-center bg-success text-black p-3">New Combo</h3>
+
+<div class="container bg-light p-2">
+  <table class="table">
+    <tr>
+      <td>Combo Name:</td>
+      <td>
+        <input type="text" class="form-control" #name="ngModel" name="name" id="name" placeholder="Nhập Name"
+          [(ngModel)]="combo.name" />
+      </td>
+    </tr>
+    <tr>
+      <td>Combo Price:</td>
+      <td>
+        <input type="text" class="form-control" #name="ngModel" name="price" id="price"
+          placeholder="Nhập Price" [(ngModel)]="combo.price" />
+      </td>
+    </tr>
+    <tr>
+      <td>Combo Description:</td>
+      <td>
+        <input type="text" class="form-control" #name="ngModel" name="des" id="des"
+          placeholder="Nhập chi tiết" [(ngModel)]="combo.des" />
+      </td>
+    </tr>
+    <tr>
+      <td>Combo Image:</td>
+      <td>
+        <input type="file" class="file-input" #name="ngModel" name="img" id="img"
+          [(ngModel)]="combo.img" (change)="onFileSelected($event,combo)" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="btn btn-dark active w-100 my-2 rounded-4" (click)="cancel()">Cancel</button>
+      </td>
+      <td>
+        <button class="btn btn-success w-100 my-2 active rounded-4" (click)="postCombo()">Submit</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="container">
+  <p>
+    {{errMessage}}
+  </p>
+</div>

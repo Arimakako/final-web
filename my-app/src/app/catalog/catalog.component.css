@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+.btn-color{
+  background: #FFCC70;
+}
+.catalog-container {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Two columns: auto for filter-container, 1fr for container */
+  gap: 20px; /* Adjust the gap between the columns */
+}
+
+
+.filter-container {
+  width: 200px;
+  height: fit-content; /* Set the desired width for the filter container */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  grid-column: 1;
+  margin-top: 20px; /* Mở rộng qua 2 cột (từ cột 2 đến cột 3) */
+}
+
+.filter-section {
+    width: 100%;
+    color: #311C1C;
+    font-size: 36px;
+    font-family: Nunito;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.filter-reset {
+    color: rgba(49, 28, 28, 0.50);
+    font-size: 24px;
+    font-family: Nunito;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+}
+
+.filter-option {
+    display:  fixed;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-label {
+    flex-grow: 1;
+    color: #311C1C;
+    font-size: 20px;
+    font-family: Nunito;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.filter-arrow {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+    border: 2px #311C1C solid;
+    /* Add arrow styling based on your design */
+}
+
+.filter-count {
+    color: rgba(48.87, 27.70, 27.70, 0);
+    font-size: 18px;
+    font-family: Mulish;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+}
+.filter-container-wrapper {
+  position: relative;
+}
+
+.filter-container.sticky {
+  position: -webkit-sticky; /* For Safari/Edge */
+  position: sticky; /* Standard */
+  top: 0;
+  z-index: 1000; /* Adjust z-index as needed */
+}
+/* styles.css */
+
+/* Container styles */
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
+  gap: 30px;
+  grid-column: 2; /* Mở rộng qua 2 cột (từ cột 2 đến cột 3) */
+/* Add margin to create space between the filter and product containers */
+}
+
+/* Image styles */
+.container img {
+  width:100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+/* Results styles */
+.results {
+  width: 1140px;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+/* Sort by styles */
+.sort-by {
+  color: #151515;
+  font-size: 20px;
+  font-family: Libre Bodoni;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+/* Sort arrow styles */
+.sort-arrow {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  transform: rotate(90deg);
+  transform-origin: 0 0;
+}
+
+.sort-arrow div {
+  width: 6px;
+  height: 12px;
+  left: 9px;
+  top: 6px;
+  position: absolute;
+  border: 2px #311C1C solid;
+}
+
+/* Product styles */
+.product {
+  padding: 20px;
+  border: 1px #EDE8E7 solid;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  display: inline-flex;
+}
+
+/* Product image styles */
+.product img {
+  width: 320px;
+  height: 334px;
+  position: relative;
+}
+
+/* Tag container styles */
+.tag-container {
+  width: 129px;
+  height: 180px;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  display: inline-flex;
+}
+
+/* Tag item styles */
+.tag-item {
+  height: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+  text-align: center;
+  color: #EDE8E7;
+  font-size: 16px;
+  text-transform: lowercase;
+  word-wrap: break-word;
+}
+
+/* Bestseller tag styles */
+.bestseller-tag {
+  background: #AA1377;
+}
+
+/* New tag styles */
+.new-tag {
+  background: #004C3F;
+}
+
+/* Sale tag styles */
+.sale-tag {
+  background: #E36709;
+}
+
+/* Product details styles */
+.product-details {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+/* Product title styles */
+.product-title {
+  width: 320px;
+  text-align: center;
+  color: #311C1C;
+  font-size: 20px;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+/* Price styles */
+.price {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  display: inline-flex;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px auto;/* Adjust the margin as needed */ /* Vertical centering */
+}
+
+.pagination a.active {
+  background-color: #22668D;
+  color: white;
+}
+/* Original price styles */
+.original-price {
+  text-align: center;
+  color: #B5ABAA;
+  font-size: 16px;
+  text-decoration: line-through;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+/* Discounted price styles */
+.discounted-price {
+  text-align: center;
+  color: #311C1C;
+  font-size: 28px;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}

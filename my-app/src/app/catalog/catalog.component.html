@@ -1,0 +1,67 @@
+<!-- ============== SECTION PAGETOP END// ============== -->
+<!-- ============== SECTION CONTENT ============== -->
+
+<!-- Price Range -->
+<div class="filter-group">
+  <header class="card-header">Price Range</header>
+  <div class="card-body">
+    <label for="lowerPrice">From:</label>
+    <input type="number" id="lowerPrice" [(ngModel)]="lowerPrice" (ngModelChange)="applyFilters()" min="0">
+    <br>
+    <label for="upperPrice">To:</label>
+    <input type="number" id="upperPrice" [(ngModel)]="upperPrice" (ngModelChange)="applyFilters()" min="0">
+  </div>
+</div>
+ 
+<div>
+  <h4>Categories</h4>
+  <div *ngFor="let cate of productcateunique">
+    <input type="checkbox" [(ngModel)]="selectedCates" [value]="cate" (ngModelChange)="applyFilters()">{{cate}}
+  </div>
+</div>
+
+<div>
+  <h4>Pet Types</h4>
+  <div *ngFor="let pettype of pettypeunique">
+    <input type="checkbox" [(ngModel)]="selectedPetTypes" [value]="pettype" (ngModelChange)="applyFilters()">{{pettype}}
+  </div>
+</div>
+
+<!-- Sorting Buttons -->
+<button (click)="sortPrice('asc')">Sort Price Ascending</button>
+<button (click)="sortPrice('dsc')">Sort Price Descending</button>
+
+  <div class="container">
+    <div class="product-section">
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="./assets/images/productcatalog_img/image 1643.png" alt="Product Image">
+          <div class="product-overlay">
+            <div class="badge sale">Sale</div>
+          </div>
+        </div>
+
+        <div class="product" *ngFor="let product of products | paginate:{itemsPerPage: tableSize, currentPage: page, totalItems: count}; let i = index">
+          <img src="{{product.img}}" width="150px" height="150px" (click)="detailProduct(product._id)">
+
+          <div class="product-details">
+
+            <h2 class="product-title">{{product.name}}</h2>
+            <div class="price">
+              <div>{{product.price}} VND</div>
+            </div>
+            <button (click)="addToCart(product)" class="btn-color">Add to Cart</button>
+          </div>
+          <!-- ... (Add more product entries as needed) ... -->
+        </div>
+      </div>
+    </div>
+    <!-- product-section .// -->
+
+    <div>
+      <pagination-controls class="pagination" previousLabel="Prev" nextLabel="Next" (pageChange)="onChange($event)">
+      </pagination-controls>
+    </div>
+  </div>
+
+<!-- catalog-container .// -->

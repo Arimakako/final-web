@@ -1,0 +1,76 @@
+.homeintro {
+    width: 100%;
+}
+
+.homeintro p {
+    position: absolute;
+    top: 400px;
+    left: 120px;
+    font-family:  'Nunito', Times;
+    color: rgb(34, 102, 141);
+    font-size: 70px;
+}
+
+.homeintro a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
+.homeintro img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+.homeintro button {
+    position: absolute;
+    top: 90%;
+    left: 14%;
+    width: 10%;
+    transform: translate(50%, -50%);
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: red;
+    box-shadow: 0px 8px 16px 0px rgba(251, 15, 15, 0.5);
+}
+
+.bodycontent {
+    font-family: 'Nunito', Times;
+    font-size: 20px;
+}
+
+.bodycontent img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+}
+
+.bodycontent p1 {
+    position: absolute;
+    top: 156%;
+    text-align: left;
+    color: black;
+}
+
+.bodycontent p2 {
+    position: absolute;
+    top: 25%;
+    text-align: left;
+    color: black;
+    font-size: 20px;
+}
+  
+.bodycontent p3 {
+    position: absolute;
+    top: 318%;
+    text-align: left;
+    color: black;
+    font-size: 30px;
+}
+
+.bodycontent h1, h2, h3 {
+text-align: center;
+}

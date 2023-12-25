@@ -1,0 +1,42 @@
+.following-infor {
+    font-family: 'Nunito', Times;
+    text-align: left;
+    margin-left: 100px;
+}
+.contact{
+    width: 100%;
+    margin-top: 40px;
+    margin: 0 auto; /* Add this line to center the table */
+}
+.following-infor {
+    width: 80%;
+    margin-top: 40px;
+}
+
+h1 {
+    float: left;
+    margin-left: 150px;
+}
+
+input {
+    width: 80%;
+}
+
+.register-button {
+    background-color: rgb(34, 102, 141);
+    color: white;
+}
+
+table {
+    width: 70%;
+    margin-top: 40px;
+    margin-left: 200px;
+}
+
+td {
+    width: fit-content;
+}
+
+td[style="width: 250px;"] {
+    width: 250px;
+}

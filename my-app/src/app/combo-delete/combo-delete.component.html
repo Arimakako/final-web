@@ -1,0 +1,32 @@
+<p>{{errMessage}}</p>
+Combo Id: <input type="text" #Id> <button (click)="deleteCombo(Id.value)">Delete Combo</button>
+<div class=" w-100">
+    <table class="table table-hover" border="1">
+        <tr class="bg-warning text-black text-center">
+            <td>Combo Id</td>
+            <td>Combo Name</td>
+            <td>Price</td>
+            <td>Combo image</td>
+            <td>Description 1</td>
+            <td>Description 2</td>
+            <td>Description 3</td>
+            <td>Description 4</td>
+            <td>Description 5</td>
+        </tr>
+        <tbody>
+            <tr *ngFor="let combo of combos">
+                <td>{{combo._id}}</td>
+                <td>{{combo.name}}</td>
+                <td>{{combo.price}}</td>
+                <td>
+                    <img src="{{combo.img}}">
+                </td>
+                <td>{{combo.des1}}</td>
+                <td>{{combo.des2}}</td>
+                <td>{{combo.des3}}</td>
+                <td>{{combo.des4}}</td>
+                <td>{{combo.des5}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
