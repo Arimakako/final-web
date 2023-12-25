@@ -9,7 +9,12 @@ export class CartService{
   private storageKey = 'cartItems';
   private items: Product[] = [];
   private cartItemsSubject = new BehaviorSubject<Product[]>([]);
+// Add new BehaviorSubjects for subtotal and total items
+private subtotalSubject = new BehaviorSubject<number>(0);
+subtotal$ = this.subtotalSubject.asObservable();
 
+private totalCountSubject = new BehaviorSubject<number>(0);
+totalCount$ = this.totalCountSubject.asObservable();
   cartItems$ = this.cartItemsSubject.asObservable();
 
   constructor() {
@@ -38,6 +43,14 @@ export class CartService{
   private emitCartItems() {
     this.cartItemsSubject.next([...this.items]);
   }
+  // Update calculations whenever the cart items change
+  public updateCalculations() {
+  const subtotal = this.calculateTotal();
+  const totalCount = this.items.reduce((count, item) => count + item.quantity, 0);
+
+  this.subtotalSubject.next(subtotal);
+  this.totalCountSubject.next(totalCount);
+}
 
   addItem(item: Product): void {
     const existingItem = this.items.find((product) => product._id === item._id);
@@ -71,4 +84,5 @@ export class CartService{
     this.emitCartItems();
     this.saveToLocalStorage();
   }
+
 }

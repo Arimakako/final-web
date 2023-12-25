@@ -5,215 +5,111 @@
     --blue-text:#22668D;
     --red-text:#FF7970;
     --yellow-btn:#FFCC70;
-  
-  }
-  html, body{
-    font-family: 'Nunito', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 15px;
-  }
-  strong{
-    color:#FF7970   ;
-  }
-  .order{
-    width: 100%; 
-    max-width: 1348px;
-    padding: 20px;  
-    background: rgba(238, 236, 224, 0.47); 
-    border-radius: 30px;
-    margin: auto;
-  }
-  .address-shipping {
-    background-color: rgba(238, 236, 224, 0.47);
-    width: 100%;
-    max-width: 1348px;
-    padding: 20px;
-    border-radius: 10px;
-    margin: auto;
-
-  }
-  .img-fluid{
-    width: 30%;
-    height: 30%;
-    border-radius: 10px;
-  }
-  .address-shipping p {
-    margin-bottom: 0px;
-    color: var(--text);
-  }
-  .address-shipping strong{
-    color:#FF7970;
-  }
-    
-    .table-checkout thead td, .table-checkout thead th {
-      border: 0;
-      color: var(--text);
-      font-size: 0.8rem;
-    }
-    .table-checkout td, .table-checkout th {
-      vertical-align: middle;
-      text-align: center;
-    }
-    .table-checkout td.qty, .table-checkout th.qty {
-      max-width: 2rem;
-    }
-    .total-items{
-      color: #22668D;
-    }
-    #shipping-fee-total{
-      color: #22668D;
-    }
-    .price {
-      margin-left: 1rem;
-    }
-    .col-sm-6 {
+}
+    .container {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-  }
-  .paySection{
-    width: 100%; 
-    max-width: 1348px;
-    background: rgba(238, 236, 224, 0.47); 
-    border-radius: 10px;
-    margin: auto;
-
-  }
-    .paymethods{
-      list-style: none;
-      margin:15px 26px 0 0;
-      float: left;
+      max-width: 100%;
+    }
+    
+    .header-check {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1348px;
+      padding: 20px;
+    }
+    .address-shipping {
+      display: flex;
+      flex-direction: column;
       background-color: rgba(238, 236, 224, 0.47);
       width: 100%;
+      max-width: 1348px;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .order {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 1348px;
+      padding: 20px;
+      background: rgba(238, 236, 224, 0.47);
+      border-radius: 30px;
+      margin: auto;
+    }
+    .paySection {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 1348px;
+      background: rgba(238, 236, 224, 0.47);
+      border-radius: 10px;
+      margin: auto;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    
+    .paymethods {
+      display: flex;
+      justify-content: start;
+      list-style: none;
+      margin: 15px 26px 0 0;
       padding: 20px;
       border-radius: 10px;
     }
-    .paymethods li{
-      float: left;
-
+    .totals {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
-    .paymethods li img{
-      vertical-align: middle;
-    }
-   
-
-
-  .totals .totals-item{
-    width: 100%;
-    margin-bottom: 10px;
-    padding-left: 10px
-  }
-  .totals .totals-item label{
-    width: 79%;
-    text-align: left;
-  }
-  .totals-value{
-    width: 21%;
-    text-align: right;
-    padding-left: 250px;
-    }
-  
-  .credit-card h2 {
-    color: rgba(4,99,128,1);
-  }
-  
-  .credit-card form {
-    display:flex;
-    flex-direction: column;
-  }
-  
-  .credit-card .line {
-    display: flex;
-  }
-  .credit-card .line input {
-    width: 20%; /* on définit une taille plus petite qu'il le faut, le flex-grow fera le reste */
-    flex: 1;
-    margin: 0.4rem 0.3rem;
-  }
-  
-  
-  #creditCardModal {
-    position: relative;
-    width: 30%;
-    margin: 5rem auto;
-    padding: 1rem;
-  
-    box-shadow: 2px 2px 10px #454545;
-    background-color: #FFFFFF;
     
-    text-align: center;
-  }
-  #creditCardModal input {
-      border: none;
-      border-bottom: 1px solid rgba(0,0,0,.12);
-      margin: 1rem 0;
-      padding: 4px;
-      font-size: 1rem;
-      outline: none;
-  }
-  .address-shipping {
-    margin-bottom: 20px; /* Add margin to create space below the "Shipping address" section */
-  }
-  
-  .btn-success{
-    display: inline-block; /* Tự co lại theo nội dung */
-    padding: 10px 20px; /* Điều chỉnh khoảng cách xung quanh nút */
-    border-radius: 60px;
-    background: #FFCC70;
-    color: #000;
-    font-family: Nunito;
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    text-align: center; /* Canh giữa nội dung */
-  }
-
-.form-control .card{
-  background: white; 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-  border-radius: 14px; 
-  border: 1px black solid
-}
-.creditcard{
-  width: 100%; 
-  height: 100%; 
-  background: #F3F1E8; 
-  border-top-left-radius: 30px; 
-  border-top-right-radius: 30px
-}
-
-
-  .top-right-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    /* Các kiểu và màu sắc tùy chỉnh cho nút */
-}
-
-.address-shipping {
-  position: relative;
-}
-h2{
-  font-family: Nunito;
-  font-style: normal;
-  color: #FF7970 ;
-  padding-left: 50px
-}
-.container {
-  position: relative;
-  max-width: 100%;
-}
-
-.top-right-button-back {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 999; /* Đặt giá trị z-index cao hơn để nút hiển thị phía trên */
-  color: #000;
-  /* Các kiểu và màu sắc tùy chỉnh cho nút */
-}
+    .totals .totals-item {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
+    
+    .totals-value {
+      padding-left: 20px; /* Adjust as needed */
+    }
+    .btn-success {
+      align-self: center; /* Center the button in its flex container */
+      padding: 10px 20px;
+      border-radius: 60px;
+      background: #FFCC70;
+      color: #000;
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: normal;
+      text-align: center;
+    }
+    .credit-card {
+      display: flex;
+      flex-direction: column;
+      width: 100%; /* Adjust as needed */
+      background: #F3F1E8;
+      border-radius: 30px;
+    }
+    
+    .credit-card .line {
+      display: flex;
+    }
+    
+    .credit-card .line input {
+      flex: 1;
+      margin: 0.4rem 0.3rem;
+    }
+    .top-right-button,
+    .top-right-button-back {
+      align-self: flex-end;
+      margin: 10px;
+      /* Other styles as needed */
+    }                        
+    

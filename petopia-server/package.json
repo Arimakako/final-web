@@ -9,7 +9,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.3",
-    "simple-encryptor": "^4.0.0"
+    "simple-encryptor": "^4.0.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

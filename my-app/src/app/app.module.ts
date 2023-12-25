@@ -43,6 +43,7 @@ import { BlogAddComponent } from './blog-add/blog-add.component';
 import { BlogAdminEditComponent } from './blog-admin-edit/blog-admin-edit.component';
 import { BlogUpdateComponent } from './blog-update/blog-update.component';
 import { BlogDeleteComponent } from './blog-delete/blog-delete.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,6 +95,7 @@ import { BlogDeleteComponent } from './blog-delete/blog-delete.component';
     FormsModule,
     AngularEditorModule,
     NgxPaginationModule,
+    ReactiveFormsModule
     
   ],
   providers: [],
