@@ -1,5 +1,8 @@
-export interface User {
+// user.interface.ts
+export interface IUser {
+    firstname: string;
+    lastname: string;
     email: string;
-    password: string;
-    // Thêm các thuộc tính khác theo yêu cầu
+    password?: string; // Optional because it won't be returned from the server on login
   }
+  

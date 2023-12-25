@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-first',
@@ -8,21 +10,37 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./first.component.css']
 })
 export class FirstComponent {
+
   email: string = '';
   password: string = '';
   errorMessage: string = '';
   successMessage: string = ''; // Property to store success message
 
-  constructor(private authService: AuthService) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   login() {
-    this.authService.login(this.email, this.password).subscribe(
-      () => {
-        // ... xử lý khi đăng nhập thành công
-      },
-      (error: HttpErrorResponse) => {  // Chỉ định rõ kiểu cho tham số error
-        this.errorMessage = "Incorrect Email or Password";
-      }
-    );
+    let bodyData = {
+      email: this.email,
+      password: this.password,
+    };
+
+    this.http.post("http://localhost:9992/user/login", bodyData)
+      .pipe(
+        catchError((error) => {
+          this.errorMessage = "An error occurred during login.";
+          // Handle additional error processing here if needed
+          return throwError(error);
+        })
+      )
+      .subscribe((resultData: any) => {
+        if (resultData.status) {
+          // Set success message and navigate to a different route on successful login
+          this.successMessage = "Login Successful!";
+          this.router.navigateByUrl(''); // Update with your successful login route
+        } else {
+          this.errorMessage = "Incorrect Email or Password";
+        }
+      });
   }
 }
+
