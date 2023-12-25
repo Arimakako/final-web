@@ -1,4 +1,7 @@
 
+#show:checked ~ .container{
+    display:block; 
+}
 
 .main-container {
     width: 100%;
