@@ -42,7 +42,7 @@ putBlog() {
   this.goBack();
 }
 goBack() {
-  this.router.navigate(['update']);
+  this.router.navigate(['tips-update']);
 }
 onFileSelected(event: any, blog: Blog) {
   let me = this;

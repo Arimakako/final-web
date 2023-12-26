@@ -26,13 +26,17 @@ const create = async (product) => {
 };
 
 const update = async (id, product) => {
+    // Tạo một bản sao của đối tượng sản phẩm để loại bỏ trường '_id'
+    let updateData = { ...product };
+    delete updateData._id;  // Loại bỏ trường '_id'
+
+    // Thực hiện cập nhật mà không thay đổi trường '_id'
     const result = await productCollection.updateOne(
         { _id: new ObjectId(id) },
-        { $set: product }
+        { $set: updateData }
     );
     return result;
 };
-
 // Delete product
 const remove = async (id) => {
     return await productCollection.deleteOne({ _id: new ObjectId(id) });

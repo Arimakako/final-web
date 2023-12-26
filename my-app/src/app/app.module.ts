@@ -44,6 +44,12 @@ import { BlogAdminEditComponent } from './blog-admin-edit/blog-admin-edit.compon
 import { BlogUpdateComponent } from './blog-update/blog-update.component';
 import { BlogDeleteComponent } from './blog-delete/blog-delete.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ServiceAdminComponent } from './service-admin/service-admin.component';
+import { ServiceAdminDeleteComponent } from './service-admin-delete/service-admin-delete.component';
+import { ServiceAdminDetailComponent } from './service-admin-detail/service-admin-detail.component';
+import { ServiceAdminUpdateComponent } from './service-admin-update/service-admin-update.component';
+import { ServiceAdminNewComponent } from './service-admin-new/service-admin-new.component';
+import { ServiceDetailComponent } from './service-detail/service-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +90,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     BlogAdminEditComponent,
     BlogUpdateComponent,
     BlogDeleteComponent,
+    ServiceAdminComponent,
+    ServiceAdminDeleteComponent,
+    ServiceAdminDetailComponent,
+    ServiceAdminUpdateComponent,
+    ServiceAdminNewComponent,
+    ServiceDetailComponent,
 
 
 

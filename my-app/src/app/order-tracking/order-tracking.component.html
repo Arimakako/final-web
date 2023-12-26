@@ -25,7 +25,14 @@
             <h3 class="h5">Order Number: {{ order.orderId }}</h3>
             <p>Order Date: {{ order.date | date }}</p>
             <p>Status: <span class="badge badge-info">{{ order.status }}</span></p>
-
+            
+            <!-- Customer Information -->
+            <h3 class="h5">Customer Information</h3>
+            <p>Name: {{ order.name }}</p>
+            <p>Address: {{ order.address }}</p>
+            <p>Phone: {{ order.phone }}</p>
+            
+            <!-- Order Items -->
             <div class="list-group my-3">
               <div *ngFor="let item of order.items" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
@@ -36,6 +43,7 @@
               </div>
             </div>
 
+            <!-- Total Amount -->
             <div class="text-right">
               <h3 class="h5">Total:</h3>
               <p class="lead">{{ order.total }}</p>

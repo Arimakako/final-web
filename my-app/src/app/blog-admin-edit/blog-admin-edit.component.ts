@@ -25,15 +25,15 @@ export class BlogAdminEditComponent {
   }
 
   createBlog() {
-    this._router.navigate(['blogs/new'])
+    this._router.navigate(['tips/new'])
   }
 
   updateBlog(blogId: string) {
-    this._router.navigate(['blogs/edit', blogId])
+    this._router.navigate(['tips/edit', blogId])
   }
 
   detailBlog(blogId: string) {
-    this._router.navigate(['blogs/detail', blogId])
+    this._router.navigate(['tips/detail', blogId])
   }
   deleteBlog(blogId: string) {
 

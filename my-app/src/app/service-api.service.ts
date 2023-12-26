@@ -1,18 +1,14 @@
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpHeaders,
-} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, retry, throwError } from 'rxjs';
-import { Product } from './Products';
+import { Service } from './Services';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProductApiService {
+export class ServiceAPIService {
   constructor(private _http: HttpClient) {}
-  getProducts(): Observable<any> {
+  getServices(): Observable<any> {
     const headers = new HttpHeaders().set(
       'Content-Type',
       'text/plain;charset=utf- 8'
@@ -21,15 +17,15 @@ export class ProductApiService {
       headers: headers,
       responseType: 'text',
     };
-    return this._http.get<any>('/products', requestOptions).pipe(
-      map((res) => JSON.parse(res) as Array<Product>),
+    return this._http.get<any>('/services', requestOptions).pipe(
+      map(res => JSON.parse(res) as Array<Service>),
       retry(3),
       catchError(this.handleError)
     );
   }
 
-  // get product by id
-  getProduct(productId: string): Observable<any> {
+  // get service by id
+  getService(serviceId: string): Observable<any> {
     const headers = new HttpHeaders().set(
       'Content-Type',
       'text/plain;charset=utf-8'
@@ -38,15 +34,31 @@ export class ProductApiService {
       headers: headers,
       responseType: 'text',
     };
-    return this._http.get<any>('/products/' + productId, requestOptions).pipe(
-      map((res) => JSON.parse(res) as Array<Product>),
+    return this._http.get<any>('/services/' + serviceId, requestOptions).pipe(
+      map((res) => JSON.parse(res) as Array<Service>),
       retry(3),
       catchError(this.handleError)
     );
   }
 
-  // post new product
-  postProduct(aproduct: Product): Observable<any> {
+  // post new service
+  postService(aservice: any): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type','application/json;charset=utf-8');
+    const requestOptions: Object = {
+      headers: headers,
+      responseType: 'text',
+    };
+    return this._http
+      .post<any>('/services', JSON.stringify(aservice), requestOptions)
+      .pipe(
+        map((res) => JSON.parse(res) as Array<Service>),
+        retry(3),
+        catchError(this.handleError)
+      );
+  }
+
+  // put service
+  updateService(aservice: Service): Observable<any> {
     const headers = new HttpHeaders().set(
       'Content-Type',
       'application/json;charset=utf-8'
@@ -56,36 +68,16 @@ export class ProductApiService {
       responseType: 'text',
     };
     return this._http
-      .post<any>('/products', JSON.stringify(aproduct), requestOptions)
+      .put<any>('/services/', JSON.stringify(aservice), requestOptions)
       .pipe(
-        map((res) => JSON.parse(res) as Array<Product>),
+        map((res) => JSON.parse(res) as Array<Service>),
         retry(3),
         catchError(this.handleError)
       );
   }
 
-  // put product
-  putProduct(productId: string, aproduct: Product): Observable<any> {
-      // Tạo một bản sao của sản phẩm để sửa đổi
-    const headers = new HttpHeaders().set(
-      'Content-Type',
-      'application/json;charset=utf-8'
-    );
-    const requestOptions: Object = {
-      headers: headers,
-      responseType: 'text',  // Sửa đổi ở đây để nhận dạng JSON thay vì text
-    };
-    return this._http
-      .put<any>(`/products/${productId}`, aproduct, requestOptions)  // Không cần JSON.stringify vì HttpClient tự động chuyển đổi
-      .pipe(
-        map((res) => res as Product),  // Trả về đối tượng Product nếu API trả về đúng định dạng
-        retry(3),
-        catchError(this.handleError)
-      );
-  }
-
-  // delete product
-  deleteProduct(productId: string): Observable<any> {
+  // delete service
+  deleteService(serviceId: string): Observable<any> {
     const headers = new HttpHeaders().set(
       'Content-Type',
       'application/json;charset=utf-8'
@@ -94,8 +86,8 @@ export class ProductApiService {
       headers: headers,
       responseType: "text"
     }
-    return this._http.delete<any>("/products/" + productId, requestOptions).pipe(
-      map(res => JSON.parse(res) as Array<Product>),
+    return this._http.delete<any>("/services/" + serviceId, requestOptions).pipe(
+      map(res => JSON.parse(res) as Array<Service>),
 
       retry(3),
       catchError(this.handleError)

@@ -32,6 +32,12 @@ import { ComboDetailComponent } from './combo-detail/combo-detail.component';
 import { ComboeachComponent } from './comboeach/comboeach.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ComboDeleteComponent } from './combo-delete/combo-delete.component';
+import { PlansComponent } from './plans/plans.component';
+import { ServiceDetailComponent } from './service-detail/service-detail.component';
+import { ServiceAdminComponent } from './service-admin/service-admin.component';
+import { ServiceAdminDetailComponent } from './service-admin-detail/service-admin-detail.component';
+import { ServiceAdminDeleteComponent } from './service-admin-delete/service-admin-delete.component';
+import { ServiceAdminUpdateComponent } from './service-admin-update/service-admin-update.component';
 
 
 const routes: Routes = [
@@ -41,10 +47,15 @@ const routes: Routes = [
 {path:'product',component:ProductComponent},
 {path:'catalog/productdetail/:id',component:ProductdetailComponent},
 {path:'catalog',component:CatalogComponent},
-{path:'services',component:ServicesComponent},
+{path:'service',component:ServicesComponent},
+{path:'service/:id',component:ServiceDetailComponent},
+{path:'service-admin',component:ServiceAdminComponent},
+{path:'service-admin/detail/:id',component:ServiceAdminDetailComponent},
+{path:'service-admin/delete/:id',component:ServiceAdminDeleteComponent},
+{path:'service-admin/edit',component:ServiceAdminUpdateComponent},
 {path: 'tips', component:TipsComponent},
 {path:'check',component:CheckComponent},
-{path:'about-us',component:AboutusComponent},
+{path:'about-us',component:AboutusComponent}, 
 {path:'cart',component:CartComponent},
 { path: 'track-order', component: OrderTrackingComponent},
 {path:'signup',component:SignupComponent},
@@ -54,6 +65,7 @@ const routes: Routes = [
 {path: 'tips-update', component: BlogAdminEditComponent},
 {path: 'tips/edit/:id', component: BlogUpdateComponent},
 {path: 'tips/detail/:id', component: PostDetailComponent},
+{path:'plan',component:PlansComponent},
 {path:'combo', component:ComboComponent},
 {path: 'combo-admin/new', component:ComboNewComponent},
 {path:'combo-admin/edit/:id',component:ComboUpdateComponent},
@@ -66,6 +78,7 @@ const routes: Routes = [
 {path:'product-admin/edit/:id',component: ProductAdminUpdateComponent},
 {path:'product-admin/detail/:id',component: ProductAdminDetailComponent},
 {path:'product-admin/delete/:id',component: ProductAdminDeleteComponent},
+
 {path:'**',component:NotFoundComponent},
 
 ];

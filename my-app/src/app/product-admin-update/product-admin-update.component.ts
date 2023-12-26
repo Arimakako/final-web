@@ -34,12 +34,21 @@ export class ProductAdminUpdateComponent {
     });
   }
   putProduct() {
-    this._service.putProduct(this.product).subscribe({
-      next: (data) => { this.products = data },
-      error: (err) => { this.errMessage = err }
-    })
-    alert('Edit product success');
-    this.goBack();
+    if(this.product && this.product._id) {
+      this._service.putProduct(this.product._id, this.product).subscribe({
+        next: (data) => { 
+          this.products = data; 
+          alert('Edit product success');
+          this.goBack();
+        },
+        error: (err) => { 
+          this.errMessage = err; 
+          console.error('Error updating product:', err);
+        }
+      });
+    } else {
+      console.error('Product ID or data is missing');
+    }
   }
   goBack() {
     this.router.navigate(['product-admin']);

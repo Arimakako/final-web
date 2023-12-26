@@ -1,148 +1,78 @@
 <div class="image-container">
-    <img src="./h9.png" alt="Hình 1">
+  <img src="./assets/images/services_img/h9.png" alt="Hình 1">
+</div>
+<div class="slide-wrapper">
+  <div class="slide-1">
+    <div class="left-image">
+      <div class="divider"></div>
+      <h3>Spa Services</h3>
+      <img class="custom-image1" src="./assets/images/services_img/h1.png" alt="Hình ảnh">
+      <p style="text-align: center;">Pamper your pet with our exceptional spa services.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="arrow-left">
+      <img src="./assets/images/services_img/h10.png" id="leftArrow">
+    </div>
   </div>
-
-  <div id="popup" class="popup">
-    <div class="close-btn" onclick="closePopup()"></div>
-    <div class="popup-content">
-      <div class="rectangle-black">
-        <div class="rectangle-beige">
-
-          <div class="popup-blue">
-            <div class="titleContainer">
-              Spa Services
-            </div>
-            <div class="contentContainer">
-              <div class="img_price">
-                <div class="imgContainer">
-                  <img class="custom-image2" src="./h2.png">
-                  <div class="name">Bathing</div>
-                </div>
-                <div class="priceContainer">
-                  229.000 VNĐ
-                </div>
-              </div>
-              <div class="description">
-                <h1>Description</h1>
-                <hr class="solid">
-                <p style="font-size: 11;">Skilled groomers provide a thorough bath, ensuring that your pets are clean & comfortable. With premium shampoos & conditioners, we cater to different coat types & specific needs. Your pets will enjoy a spa-like treatment, leaving them feeling refreshed & revitalized.</p>
-                <ol style="font-size: 10;"><li>Pre-bath grooming</li>
-                <li>Shampoo and lather</li>
-                <li>Rinse</li>
-                <li>Conditioning treatment</li>
-                <li>Towel dry</li>
-                <li>Blow dry</li>
-                <li>Finishing touches</li></ol>
-              </div>
-            </div>
-          </div>
-
+  <div class="slider">
+    <div class="slider-container">
+      <div class="element" *ngFor="let service of services">
+        <div class="rectangle2">
+          <img class="custom-image2" src="{{service.img}}" id="img1">
+          <div class="sv1" id="tt1">{{service.name}}</div>
+          <div class="rectangle2b" (click)="detailService(service._id)">See more</div>
         </div>
+        <div class="price">{{service.price}} VND</div>
       </div>
     </div>
   </div>
+  <div class="arrow-right">
+    <img src="./assets/images/services_img/h10.png" id="leftArrow">
+  </div>
+</div>
 
-<table class="table1">
-<tr>
-  <td> <!--Blue square 1-->
-      <div class="rectangle1">
-        <div class="divider"></div>
-        <h3>Spa Services</h3>
-        <img class="custom-image1" src="./h1.png" alt="Hình ảnh">
-        <p style="text-align: center;">Pamper your pet with our exceptional spa services.</p>
-        <div class="divider"></div>
-      </div>
-  </td>
-  <td> <!--mũi tên1-->
-        <img class="arrow1" src="./h10.png" id="leftArrow">
-  </td>
-  <td>
-      <div class="rectangle2"> <!--Service 1-->
-          <img class="custom-image2" src="./h2.png" id="img1">
-          <div class="sv1" id="tt1">Bathing</div>
-          <div class="rectangle2b" onclick="showPopup()">See more</div>
-      </div>
-          <div class="price">199.000 VNĐ</div>
-  </td>
-  <td>
-      <div class="rectangle2"> <!--Service 2-->
-          <img class="custom-image2" src="./h3.png" id="img2">
-          <div class="sv1" id="tt2">Brushing</div>
-          <div class="rectangle2b" onclick="showPopup()">See more</div>
-      </div>
-      <div class="price">199.000 VNĐ</div>
-  </td>
-  <td>
-      <div class="rectangle2"> <!--Service 3-->
-          <img class="custom-image2" src="./h4.png" id="img3">
-          <div class="sv1" id="tt3">Hair Trimming</div>
-          <div class="rectangle2b" onclick="showPopup()">See more</div>
-      </div>
-          <div class="price">199.000 VNĐ</div>
-  </td>            
-  <td style="width: 30px;">  <!--mũi tên2-->
-          <img class="arrow2" src="./h10.png"id="rightArrow">
-  </td>
-</tr>
+<div class="divider2"></div>
+<table class="table2">
+  <tr>
+    <td>
+      <img src="./assets/images/services_img/h11.jfif">
+    </td>
+    <td>
+      <img src="./assets/images/services_img/h12.jfif">
+    </td>
+    <td>
+      <img src="./assets/images/services_img/h13.jfif">
+    </td>
+  </tr>
 </table>
+<div class="divider2"></div>
 
-<table class="table2"><div class="divider2"></div>
-<tr>
-<td>
-<img src="./h11.jfif">
-</td>
-<td>
-<img src="./h12.jfif">
-</td>
-<td>
-<img src="./h13.jfif">
-</td>
-</tr>
-</table><div class="divider2"></div>
-
-<table class="table1">
-<tr>
-<td> <!--mũi tên1-->
-  <img class="arrow1" src="./h10.png">
-</td>
-
-<td>
-<div class="rectangle2">
-  <img class="custom-image2" src="./h8.png">
-  <div class="sv1">Daytime</div>
-  <div class="rectangle2b" onclick="showPopup()">See more</div>
-</div>
-<div class="price">99.000 VNĐ</div> 
-</td>
-
-
-<td>
-<div class="rectangle2"> <!--Service 5-->
-    <img class="custom-image2" src="./h7.png">
-    <div class="sv1">Overnight</div>
-    <div class="rectangle2b" onclick="showPopup()">See more</div>
-</div>
-    <div class="price">99.000 VNĐ</div>
-</td>
-<td>
-<div class="rectangle2"> <!--Service 6-->
-    <img class="custom-image2" src="./h6.png">
-    <div class="sv1">Daily rental</div>
-    <div class="rectangle2b" onclick="showPopup()">See more</div>
-</div>
-    <div class="price">149.000 VNĐ</div>
-</td>            
-<td style="width: 30px;">  <!--mũi tên2-->
-    <img class="arrow2" src="./h10.png">
-</td>
-<td> <!--Blue square 2-->
-<div class="rectangle01">
-    <div  class="divider"></div>
+<div class="slide-wrapper">
+  <div class="slide-1">
+    <div class="arrow-left">
+      <img src="./assets/images/services_img/h10.png" id="leftArrow">
+    </div>
+  </div>
+  <div class="slider">
+    <div class="slider-container">
+      <div class="element" *ngFor="let service of services">
+        <div class="rectangle2">
+          <img class="custom-image2" src="{{service.img}}" id="img1">
+          <div class="sv1" id="tt1">{{service.name}}</div>
+          <div class="rectangle2b" (click)="detailService(service._id)">See more</div>
+        </div>
+        <div class="price">{{service.price}} VND</div>
+      </div>
+    </div>
+  </div>
+  <div class="arrow-right">
+    <img src="./assets/images/services_img/h10.png" id="leftArrow">
+  </div>
+  <div class="right-image">
+    <div class="divider"></div>
     <h3>Hotel Services</h3>
-    <img class="custom-image1" src="./h5.png" alt="Hình ảnh">
+    <img class="custom-image1" src="./assets/images/services_img/h5.png" alt="Hình ảnh">
     <p style="text-align: center;">Give your pet a luxurious stay at our premier pet hotel.</p>
     <div class="divider"></div>
+  </div>
 </div>
-</td>
-</tr>
-</table>

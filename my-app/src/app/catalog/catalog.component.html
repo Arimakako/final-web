@@ -60,44 +60,12 @@
 <!-- ============== SECTION PAGETOP END// ============== -->
 <!-- ============== SECTION CONTENT ============== -->
 
-
-<!-- Price Range -->
-<div class="filter-group">
-  <header class="card-header">Price Range</header>
-  <div class="card-body">
-    <label for="lowerPrice">From:</label>
-    <input type="number" id="lowerPrice" [(ngModel)]="lowerPrice" (ngModelChange)="applyFilters()" min="0">
-    <br>
-    <label for="upperPrice">To:</label>
-    <input type="number" id="upperPrice" [(ngModel)]="upperPrice" (ngModelChange)="applyFilters()" min="0">
-  </div>
-</div>
- 
-<div>
-  <h4>Categories</h4>
-  <div *ngFor="let cate of productcateunique">
-    <input type="checkbox" [(ngModel)]="selectedCates" [value]="cate" (ngModelChange)="applyFilters()">{{cate}}
-  </div>
-</div>
-
-<div>
-  <h4>Pet Types</h4>
-  <div *ngFor="let pettype of pettypeunique">
-    <input type="checkbox" [(ngModel)]="selectedPetTypes" [value]="pettype" (ngModelChange)="applyFilters()">{{pettype}}
-  </div>
-</div>
-
-
-<!-- Sorting Buttons -->
-<button (click)="sortPrice('asc')">Sort Price Ascending</button>
-<button (click)="sortPrice('desc')">Sort Price Descending</button>
-
   <div class="container">
     <div class="product-section">
       <div class="product-grid">
         <div class="product-card">
           <button (click)="sortPrice('asc')" class ="btn-color">Price Ascending</button>
-          <button (click)="sortPrice('dsc')" class ="btn-color">Price Descending</button>
+          <button (click)="sortPrice('desc')" class ="btn-color">Price Descending</button>
           <div class="product-overlay">
             <div class="badge sale">Sale</div>
           </div>

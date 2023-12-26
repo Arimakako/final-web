@@ -258,6 +258,7 @@
   text-decoration: line-through;
   text-transform: uppercase;
   word-wrap: break-word;
+  margin-top: 20px;
 }
 
 /* Discounted price styles */
