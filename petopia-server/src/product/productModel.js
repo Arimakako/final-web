@@ -28,7 +28,7 @@ const create = async (product) => {
 const update = async (id, product) => {
     // Tạo một bản sao của đối tượng sản phẩm để loại bỏ trường '_id'
     let updateData = { ...product };
-    delete updateData._id;  // Loại bỏ trường '_id'
+    delete updateData._id; 
 
     // Thực hiện cập nhật mà không thay đổi trường '_id'
     const result = await productCollection.updateOne(

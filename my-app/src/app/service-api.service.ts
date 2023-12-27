@@ -58,23 +58,23 @@ export class ServiceAPIService {
   }
 
   // put service
-  updateService(aservice: Service): Observable<any> {
-    const headers = new HttpHeaders().set(
-      'Content-Type',
-      'application/json;charset=utf-8'
+  putService(serviceId: string, aservice: Service): Observable<any> {
+    // Tạo một bản sao của sản phẩm để sửa đổi
+  const headers = new HttpHeaders().set(
+    'Content-Type',
+    'application/json;charset=utf-8'
+  );
+  const requestOptions: Object = {
+    headers: headers,
+    responseType: 'text',  // Sửa đổi ở đây để nhận dạng JSON thay vì text
+  };
+  return this._http
+    .put<any>(`/services/${serviceId}`, aservice, requestOptions)  
+    .pipe(
+      map((res) => res as Service),  
+      catchError(this.handleError)
     );
-    const requestOptions: Object = {
-      headers: headers,
-      responseType: 'text',
-    };
-    return this._http
-      .put<any>('/services/', JSON.stringify(aservice), requestOptions)
-      .pipe(
-        map((res) => JSON.parse(res) as Array<Service>),
-        retry(3),
-        catchError(this.handleError)
-      );
-  }
+}
 
   // delete service
   deleteService(serviceId: string): Observable<any> {

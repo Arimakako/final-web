@@ -25,9 +25,11 @@ const create = async (combo) => {
 };
 
 const update = async (id, combo) => {
+    let updateData = { ...combo };
+    delete updateData._id; 
     const result = await comboCollection.updateOne(
         { _id: new ObjectId(id) },
-        { $set: combo }
+        { $set: updateData }
     );
     return result;
 };

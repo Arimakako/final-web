@@ -58,7 +58,7 @@ export class ServiceAdminNewComponent {
 
   // route admin to fashions page
   cancel() {
-    this._router.navigate(['/service/admin'])
+    this._router.navigate(['service-admin'])
   }
   dropdownOptions = ['Spa Service', 'Hotel Service'];
 }

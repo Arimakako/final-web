@@ -76,10 +76,9 @@ export class ProductApiService {
       responseType: 'text',  // Sửa đổi ở đây để nhận dạng JSON thay vì text
     };
     return this._http
-      .put<any>(`/products/${productId}`, aproduct, requestOptions)  // Không cần JSON.stringify vì HttpClient tự động chuyển đổi
+      .put<any>(`/products/${productId}`, aproduct, requestOptions)  
       .pipe(
-        map((res) => res as Product),  // Trả về đối tượng Product nếu API trả về đúng định dạng
-        retry(3),
+        map((res) => res as Product),  
         catchError(this.handleError)
       );
   }

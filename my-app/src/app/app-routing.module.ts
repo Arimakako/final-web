@@ -38,6 +38,7 @@ import { ServiceAdminComponent } from './service-admin/service-admin.component';
 import { ServiceAdminDetailComponent } from './service-admin-detail/service-admin-detail.component';
 import { ServiceAdminDeleteComponent } from './service-admin-delete/service-admin-delete.component';
 import { ServiceAdminUpdateComponent } from './service-admin-update/service-admin-update.component';
+import { ServiceAdminNewComponent } from './service-admin-new/service-admin-new.component';
 
 
 const routes: Routes = [
@@ -50,9 +51,10 @@ const routes: Routes = [
 {path:'service',component:ServicesComponent},
 {path:'service/:id',component:ServiceDetailComponent},
 {path:'service-admin',component:ServiceAdminComponent},
+{path:'service-admin/new',component:ServiceAdminNewComponent},
 {path:'service-admin/detail/:id',component:ServiceAdminDetailComponent},
 {path:'service-admin/delete/:id',component:ServiceAdminDeleteComponent},
-{path:'service-admin/edit',component:ServiceAdminUpdateComponent},
+{path:'service-admin/edit/:id',component:ServiceAdminUpdateComponent},
 {path: 'tips', component:TipsComponent},
 {path:'check',component:CheckComponent},
 {path:'about-us',component:AboutusComponent}, 

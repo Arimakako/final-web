@@ -33,16 +33,25 @@ export class ServiceAdminUpdateComponent {
       },
     });
   }
-  updateService() {
-    this._service.updateService(this.service).subscribe({
-      next: (data) => { this.services = data },
-      error: (err) => { this.errMessage = err }
-    })
-    alert('Edit product success');
-    this.goBack();
+  putService() {
+    if(this.service && this.service._id) {
+      this._service.putService(this.service._id, this.service).subscribe({
+        next: (data) => { 
+          this.services = data; 
+          alert('Edit service success');
+          this.goBack();
+        },
+        error: (err) => { 
+          this.errMessage = err; 
+          console.error('Error updating service:', err);
+        }
+      });
+    } else {
+      console.error('service ID or data is missing');
+    }
   }
   goBack() {
-    this.router.navigate(['service/admin']);
+    this.router.navigate(['service-admin']);
   }
   onFileSelected(event: any, product: Service) {
     let me = this;

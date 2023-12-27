@@ -50,18 +50,20 @@ catchError(this.handleError))
   }
 
   // put combo
-  putCombo(acombo: Combo): Observable<any> {
+  putCombo(comboId: string,acombo: Combo): Observable<any> {
     const headers = new HttpHeaders().set("Content-Type", "application/json;charset=utf-8")
     const requestOptions: Object = {
       headers: headers,
       responseType: "text"
     }
-    return this._http.put<any>("/combos", JSON.stringify(acombo), requestOptions).pipe(
-      map(res => JSON.parse(res) as Array<Combo>),
-      retry(3),
-      catchError(this.handleError))
+    return this._http
+    .put<any>(`/combos/${comboId}`, acombo, requestOptions)  
+    .pipe(
+      map((res) => res as Combo),  
+      catchError(this.handleError)
+    );
   }
-
+  
   // delete combo
   deleteCombo(comboId: string): Observable<any> {
     const headers = new HttpHeaders().set("Content-Type", "application/json;charset=utf-8")

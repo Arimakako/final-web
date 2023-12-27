@@ -32,6 +32,6 @@ export class ServiceAdminDetailComponent {
     })
   }
   goBack() {
-    this._router.navigate(['service/admin']);
+    this._router.navigate(['service-admin']);
   }
 }

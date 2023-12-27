@@ -25,9 +25,11 @@ const create = async (service) => {
 };
 
 const update = async (id, service) => {
+    let updateData = { ...service };
+    delete updateData._id; 
     const result = await serviceCollection.updateOne(
         { _id: new ObjectId(id) },
-        { $set: service }
+        { $set: updateData }
     );
     return result;
 };

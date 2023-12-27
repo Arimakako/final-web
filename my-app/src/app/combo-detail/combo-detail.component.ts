@@ -1,13 +1,4 @@
-// import { Component } from '@angular/core';
 
-// @Component({
-//   selector: 'app-combo-detail',
-//   templateUrl: './combo-detail.component.html',
-//   styleUrls: ['./combo-detail.component.css']
-// })
-// export class ComboDetailComponent {
-
-// }
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Combo } from '../combo';
@@ -41,6 +32,6 @@ export class ComboDetailComponent {
     })
   }
   goBack() {
-    this._router.navigate(['admincombo']);
+    this._router.navigate(['combo-admin']);
   }
 }

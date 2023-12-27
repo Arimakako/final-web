@@ -32,7 +32,7 @@ export class ServiceAdminDeleteComponent {
     this.cancel()
   }
   cancel() {
-    this._router.navigate(['/service/admin'])
+    this._router.navigate(['service-admin'])
   }
   // get services
   getServices() {

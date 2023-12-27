@@ -34,12 +34,21 @@ export class BlogUpdateComponent {
     });
 }
 putBlog() {
-  this._service.putBlog(this.blog).subscribe({
-    next: (data) => { this.blogs = data },
-    error: (err) => { this.errMessage = err }
-  })
-  alert('Edit success');
-  this.goBack();
+  if(this.blog && this.blog._id) {
+    this._service.putBlog(this.blog._id, this.blog).subscribe({
+      next: (data) => { 
+        this.blogs = data; 
+        alert('Edit blog success');
+        this.goBack();
+      },
+      error: (err) => { 
+        this.errMessage = err; 
+        console.error('Error updating blog:', err);
+      }
+    });
+  } else {
+    console.error('blog ID or data is missing');
+  }
 }
 goBack() {
   this.router.navigate(['tips-update']);

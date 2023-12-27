@@ -25,9 +25,11 @@ const create = async (blog) => {
 };
 
 const update = async (id, blog) => {
+    let updateData = { ...blog };
+    delete updateData._id; 
     const result = await blogCollection.updateOne(
         { _id: new ObjectId(id) },
-        { $set: blog }
+        { $set: updateData }
     );
     return result;
 };

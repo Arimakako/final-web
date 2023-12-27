@@ -22,15 +22,15 @@ export class ServiceAdminComponent {
   }
 
   createService() {
-    this._router.navigate(['service/admin/new'])
+    this._router.navigate(['service-admin/new'])
   }
 
   updateService(serviceId: string) {
-    this._router.navigate(['service/admin/update', serviceId])
+    this._router.navigate(['service-admin/edit', serviceId])
   }
 
   detailService(serviceId: string) {
-    this._router.navigate(['service/admin/detail', serviceId])
+    this._router.navigate(['service-admin/detail', serviceId])
   }
 
   deleteService(serviceId: string) {
@@ -47,6 +47,6 @@ success() {
   }
 }
 cancel() {
-  this._router.navigate(['/service/admin'])
+  this._router.navigate(['service-admin'])
 }
 }
